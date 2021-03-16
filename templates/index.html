@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>{{ the_title }}</h1>
+
+<img alt="Photo: Bengal Tiger" src="{{ url_for('static', filename='images/tiger.jpg') }}">
+
+<ul>
+  <li><a href="{{ url_for('schedule') }}">Schedule</a></li>
+  <li><a href="{{ url_for('contractor') }}">Contractors</a></li>
+  <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+</ul>
+
+{% endblock %}
+
