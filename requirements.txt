@@ -8,3 +8,5 @@ packaging
 pyparsing
 six
 Werkzeug
+flask_sqlalchemy
+Flask-Migrate

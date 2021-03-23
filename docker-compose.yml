@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web:
+    env_file: env/local-vars.yml
+    restart: always
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONPATH=/app:$PYTHONPATH
+      - PYTHONUNBUFFERED=1
+      - SQLALCHEMY_DATABASE_URI=postgresql://super:superscheduler@postgres:5432/super
+      - DATABASE_URI=postgresql://super:superscheduler@postgres:5432/super
+    volumes:
+      - .:/app
+
+
+  postgres:
+    restart: always
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=superscheduler
+      - POSTGRES_USER=super
+      - POSTGRES_DB=super
+    volumes:
+      - '${PWD}/db-data:/var/lib/postgresql/data'
+    ports:
+      - '5432'

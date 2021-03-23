@@ -5,3 +5,6 @@
 # folders to be ignored
 env/
 .env
+
+# local database directory
+db-data/
