@@ -24,6 +24,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 @app.route('/index.html')
+@app.route('/dashboard.html')
 @app.route('/dashboard')
 def index():
     return render_template('index.html', the_title='Dashboard')
