@@ -10,3 +10,8 @@ six
 Werkzeug
 flask_sqlalchemy
 Flask-Migrate
+configparser
+deepmerge
+pathlib
+PyYAML
+psycopg2
